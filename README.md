@@ -12,13 +12,32 @@ This resource module contains the following resources:
 ##ConfigurationVersion##
 The following example shows how to use the `ConfigurationVerison` DSC resource.
 
-    Configuration DemoConfiguraton
+    Configuration VersionedConfiguration
     {
-        Import-DscResource -ModuleName ConfigurationDsc
-    
-        ConfigurationVersion NewBuildConfig
+        param
+        (
+            [Parameter(Mandatory = $true)]
+            [String] $ConfigurationName,
+
+            [Parameter(Mandatory = $true)]
+            [String] $ConfigurationVersion
+        )
+
+        Import-DscResource -ModuleName PSDesiredStateConfiguration -ModuleVersion 1.1
+        Import-DscResource -ModuleName ConfigurationDsc -ModuleVersion 1.0.0.0
+
+        ConfigurationVersion WebServerConfiguration
         {
-            Version = '10.0.0.1'
-            ConfigurationName = 'DemoConfiguration'
+            Name = $ConfigurationName
+            Version = $ConfigurationVersion
+        }
+
+        WindowsFeature WebServer
+        {
+            Name = 'Web-Server'
+            IncludeAllSubFeature = $true
+            Ensure = 'Present'
         }
     }
+
+    VersionedConfiguration -ConfigurationName 'WebServerConfig' -ConfigurationVersion '1.0.0.0'
