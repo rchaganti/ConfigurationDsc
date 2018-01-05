@@ -6,10 +6,10 @@ This resource module contains the following resources:
 
 |Resource Name       |Description|
 |--------------------|-----------|
-|[ConfigurationVersion](https://github.com/rchaganti/ConfigurationDsc/tree/master/DscResources/ConfigurationVersion)|This resource can be used to specify the version of the configuration that is enacted on a node. Refer to <PSMAG> post for more information and background.|
+|[ConfigurationVersion](https://github.com/rchaganti/ConfigurationDsc/tree/master/DscResources/ConfigurationVersion)|This resource can be used to specify the version of the configuration that is enacted on a node.|
 
-#Examples#
-##ConfigurationVersion##
+# Examples #
+## ConfigurationVersion ##
 The following example shows how to use the `ConfigurationVerison` DSC resource.
 
     Configuration VersionedConfiguration
