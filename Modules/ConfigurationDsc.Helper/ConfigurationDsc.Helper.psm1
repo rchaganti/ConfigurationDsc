@@ -23,7 +23,7 @@ function Get-DscResourceCacheLocation
         [String] $ConfigurationName
     )
 
-    $cachePath = "${env:ProgramData}\Microsoft\Windows\PowerShell\Configuration\BuiltinProvCache\${ResourceName}"
+    $cachePath = "${env:ProgramData}\Microsoft\Windows\PowerShell\Configuration\ResourceCache\${ResourceName}"
 
     $cacheObject = @{
         CachePath = $cachePath
