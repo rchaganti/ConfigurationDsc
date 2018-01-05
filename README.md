@@ -1,7 +1,7 @@
 # DSC configuration resources
 A set of resources to work with DSC configurations in an Infrastructure as Code (IaC) deployment pipeline.
 
-#Resources in this module#
+# Resources in this module #
 This resource module contains the following resources:
 
 |Resource Name       |Description|
